@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.0-beta.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,6 +15,7 @@
     "build": "tsdx build",
     "prepare": "tsdx build",
     "size": "size-limit",
+    "test": "tsdx test --passWithNoTests",
     "prettier": "prettier --ignore-path ./.gitignore --write .",
     "prettier:fix": "yarn prettier --fix"
   },
@@ -34,7 +35,7 @@
     "api",
     "node"
   ],
-  "name": "incident-api-node",
+  "name": "@grafana/incident-node",
   "description": "Client wrapper for Grafana Incident's Public API",
   "author": "Grafana",
   "module": "dist/incident-api-node.esm.js",
