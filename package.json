@@ -15,9 +15,10 @@
     "build": "tsdx build",
     "prepare": "tsdx build",
     "size": "size-limit",
+    "lint": "true",
     "test": "tsdx test --passWithNoTests",
-    "prettier": "prettier --ignore-path ./.gitignore --write .",
-    "prettier:fix": "yarn prettier --fix"
+    "prettier": "prettier --ignore-path ./.gitignore -c .",
+    "prettier:fix": "prettier --ignore-path ./.gitignore --write ."
   },
   "husky": {
     "hooks": {
