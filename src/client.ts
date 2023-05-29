@@ -1,4 +1,4 @@
-import type { Json } from '@/utils/json';
+import type { Json } from './utils/json';
 
 export type ClientResponse =
   | {

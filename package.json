@@ -1,6 +1,10 @@
 {
+  "name": "@grafana/incident-node",
+  "description": "Client wrapper for Grafana Incident's Public API",
+  "author": "Grafana",
   "version": "0.1.1",
   "license": "MIT",
+  "module": "dist/incident-api-node.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -36,10 +40,6 @@
     "api",
     "node"
   ],
-  "name": "@grafana/incident-node",
-  "description": "Client wrapper for Grafana Incident's Public API",
-  "author": "Grafana",
-  "module": "dist/incident-api-node.esm.js",
   "size-limit": [
     {
       "path": "dist/incident-api-node.cjs.production.min.js",
