@@ -1,0 +1,64 @@
+{
+  "name": "@grafana/incident-node",
+  "description": "Client wrapper for Grafana Incident's Public API",
+  "author": "Grafana",
+  "version": "0.1.3",
+  "license": "MIT",
+  "module": "dist/incident-api-node.esm.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "lint": "true",
+    "test": "tsdx test --passWithNoTests",
+    "prettier": "prettier -c ./src",
+    "prettier:fix": "prettier -w ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grafana/incident-node.git"
+  },
+  "homepage": "https://github.com/grafana/incident-node",
+  "keywords": [
+    "grafana",
+    "incident",
+    "api",
+    "node"
+  ],
+  "size-limit": [
+    {
+      "path": "dist/incident-api-node.cjs.production.min.js",
+      "limit": "25 KB"
+    },
+    {
+      "path": "dist/incident-api-node.esm.js",
+      "limit": "25 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "husky": "^8.0.3",
+    "size-limit": "^8.2.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.5.2",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}
