@@ -21,8 +21,8 @@
     "size": "size-limit",
     "lint": "true",
     "test": "tsdx test --passWithNoTests",
-    "prettier": "prettier --ignore-path ./.gitignore -c .",
-    "prettier:fix": "prettier --ignore-path ./.gitignore --write ."
+    "prettier": "prettier -c ./src",
+    "prettier:fix": "prettier -w ./src"
   },
   "husky": {
     "hooks": {

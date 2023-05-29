@@ -29,15 +29,28 @@ export class GrafanaIncidentClient implements Client {
 
   public async fetch(path: string, payload: Json): Promise<ClientResponse> {
     const url = `${this._instanceUrl}/api/plugins/grafana-incident-app/resources/api/v1/${path}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${this._serviceAccountToken}`,
-      },
-      body: JSON.stringify(payload, null, process.env.NODE_ENV === 'development' ? 1 : undefined),
-    });
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this._serviceAccountToken}`,
+        },
+        body: JSON.stringify(payload, null, process.env.NODE_ENV === 'development' ? 1 : undefined),
+      });
+    } catch (e) {
+      // Fetch does throw on network errors, so we want to handle them here
+      return {
+        success: false,
+        error: {
+          status: 500,
+          statusText: 'Connection',
+          message: 'Failure attempting to connect to Grafana Incident API',
+        },
+      };
+    }
 
     if (response.ok) {
       try {
