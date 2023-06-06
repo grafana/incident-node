@@ -22,7 +22,9 @@
     "lint": "true",
     "test": "tsdx test --passWithNoTests",
     "prettier": "prettier -c ./src",
-    "prettier:fix": "prettier -w ./src"
+    "prettier:fix": "prettier -w ./src",
+    "test:ci": "yarn test",
+    "typecheck": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
