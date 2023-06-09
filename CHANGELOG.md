@@ -1,0 +1,9 @@
+# Changelog
+
+## [0.2.0](https://github.com/grafana/incident/compare/incident-node-v0.1.3...incident-node-v0.2.0) (2023-06-09)
+
+
+### Features
+
+* Add grafana-incident node api repo to monorepo ([#3613](https://github.com/grafana/incident/issues/3613)) ([b9020d5](https://github.com/grafana/incident/commit/b9020d56eb14dbaaf0fe079580ff9a2406c266b3))
+* oto field validation and other protections ([#3657](https://github.com/grafana/incident/issues/3657)) ([476499e](https://github.com/grafana/incident/commit/476499ea2c7e9bdcd1f87d686b4709c51bbc8210))
