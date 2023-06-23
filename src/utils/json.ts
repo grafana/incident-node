@@ -8,14 +8,14 @@ export interface JsonArray extends ReadonlyArray<Json> {}
 /**
  * Decode json to a zod schema
  */
-export async function decodeJson<T extends { error?: string }>(
+export async function decodeJson<T extends { error?: string | null }>(
   something: Json,
   schema: Schema<T, ZodTypeDef, Json>
 ): Promise<APIResponse<T>> {
   const result = await schema.safeParseAsync(something);
   if (result.success) {
     const { error } = result.data;
-    if (error !== undefined && error?.length > 0) {
+    if (error != null && error?.length > 0) {
       return {
         success: false,
         error: {
