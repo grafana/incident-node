@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/grafana/incident/compare/incident-api-node-v0.4.0...incident-api-node-v1.9.1) (2023-06-26)
+
+
+### Miscellaneous Chores
+
+* release 1.9.1 ([69eacd4](https://github.com/grafana/incident/commit/69eacd48146d9f54c7a1fc011493b47d182e3c54))
+
 ## [0.4.0](https://github.com/grafana/incident/compare/incident-api-node-v0.3.0...incident-api-node-v0.4.0) (2023-06-26)
 
 
