@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "watch": "tsdx watch",
     "build": "tsdx build",
     "prepare": "tsdx build",
     "size": "size-limit",
