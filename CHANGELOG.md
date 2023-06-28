@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/grafana/incident/compare/incident-api-node-v1.9.1...incident-api-node-v1.9.2) (2023-06-28)
+
+
+### Bug Fixes
+
+* update oauth2 flow to correctly redirect the user back to the installation screen ([#3868](https://github.com/grafana/incident/issues/3868)) ([5f5db6d](https://github.com/grafana/incident/commit/5f5db6d2537ef3d18857588e7f71e1c88591cd9e)), closes [#3797](https://github.com/grafana/incident/issues/3797) [#3864](https://github.com/grafana/incident/issues/3864)
+
 ## [1.9.1](https://github.com/grafana/incident/compare/incident-api-node-v0.4.0...incident-api-node-v1.9.1) (2023-06-26)
 
 
