@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.18.0](https://github.com/grafana/incident/compare/incident-api-node-v1.9.2...incident-api-node-v1.18.0) (2023-08-18)
+
+
+### Features
+
+* Add filter language for activity items ([#4119](https://github.com/grafana/incident/issues/4119)) ([d025280](https://github.com/grafana/incident/commit/d02528077e3b18eeb6b2dad28edbc02926ec445a))
+
+
+### Miscellaneous Chores
+
+* release v1.18.0 ([#4146](https://github.com/grafana/incident/issues/4146)) ([ca34360](https://github.com/grafana/incident/commit/ca343606f3d9836fd5904e1954399a8dca626dea))
+
 ## [1.9.2](https://github.com/grafana/incident/compare/incident-api-node-v1.9.1...incident-api-node-v1.9.2) (2023-06-28)
 
 
