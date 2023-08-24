@@ -56,6 +56,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.2.4",
     "husky": "^8.0.3",
+    "prettier": "^3.0.2",
     "size-limit": "^8.2.4",
     "tsdx": "^0.14.1",
     "tslib": "^2.5.2",
