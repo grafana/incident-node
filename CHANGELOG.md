@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/grafana/incident/compare/incident-api-node-v1.18.0...incident-api-node-v1.19.0) (2023-08-31)
+
+
+### Features
+
+* **timeline:** filter timeline in various ways ([#4199](https://github.com/grafana/incident/issues/4199)) ([1cd8898](https://github.com/grafana/incident/commit/1cd88984745a90ca168f6c6dd5b154693bd0239c))
+
 ## [1.18.0](https://github.com/grafana/incident/compare/incident-api-node-v1.9.2...incident-api-node-v1.18.0) (2023-08-18)
 
 
