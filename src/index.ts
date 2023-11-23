@@ -50,6 +50,7 @@ export function ActivityItemSchema() {
     tags: z.enum(['important', 'starred', '']).array(),
     immutable: z.boolean(),
     fieldValues: z.record(z.unknown()),
+    attachments: AttachmentSchema().array(),
   });
 }
 
@@ -152,6 +153,31 @@ export function AssignRoleResponseSchema() {
 }
 
 export type AssignRoleResponse = z.infer<ReturnType<typeof AssignRoleResponseSchema>>;
+
+// Attachment is a file attached to something.
+export function AttachmentSchema() {
+  return z.object({
+    attachmentID: z.string(),
+    attachedByUserID: z.string(),
+    sourceURL: z.string(),
+    useSourceURL: z.boolean(),
+    path: z.string(),
+    uploadTime: z.string(),
+    deletedTime: z.string(),
+    contentType: z.string(),
+    fileType: z.enum(['file', 'video', 'image', 'audio', 'screenshare', '']),
+    ext: z.string(),
+    contentLength: z.number(),
+    displayType: z.enum(['list', 'embed', '']),
+    downloadURL: z.string(),
+    hasThumbnail: z.boolean(),
+    thumbnailURL: z.string(),
+    sHA512: z.string(),
+    attachmentErr: z.string(),
+  });
+}
+
+export type Attachment = z.infer<ReturnType<typeof AttachmentSchema>>;
 
 // CreateIncidentRequest is the request for the CreateIncident call.
 export function CreateIncidentRequestSchema() {
