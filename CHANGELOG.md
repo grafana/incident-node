@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/grafana/incident/compare/incident-api-node-v1.19.0...incident-api-node-v1.20.0) (2023-11-29)
+
+
+### Features
+
+* Better Slack media in potted items, and file uploading in general ([#4267](https://github.com/grafana/incident/issues/4267)) ([fbb5c0a](https://github.com/grafana/incident/commit/fbb5c0a60422ac16fae4cbec69215be7e25082de))
+
 ## [1.19.0](https://github.com/grafana/incident/compare/incident-api-node-v1.18.0...incident-api-node-v1.19.0) (2023-08-31)
 
 
