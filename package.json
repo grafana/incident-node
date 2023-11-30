@@ -2,7 +2,7 @@
   "name": "@grafana/incident-node",
   "description": "Client wrapper for Grafana Incident's Public API",
   "author": "Grafana",
-  "version": "1.20.0",
+  "version": "1.30.2",
   "license": "MIT",
   "module": "dist/incident-api-node.esm.js",
   "main": "dist/index.js",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.2](https://github.com/grafana/incident/compare/incident-api-node-v1.20.0...incident-api-node-v1.30.2) (2023-11-30)
+
+
+### Miscellaneous Chores
+
+* release v1.30.2 ([#4655](https://github.com/grafana/incident/issues/4655)) ([5a7f044](https://github.com/grafana/incident/commit/5a7f0447ca2a984085706d7e90ee3b035a8f1abe))
+
 ## [1.20.0](https://github.com/grafana/incident/compare/incident-api-node-v1.19.0...incident-api-node-v1.20.0) (2023-11-29)
 
 
