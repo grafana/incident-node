@@ -69,7 +69,7 @@ export function ActivityQuerySchema() {
 
 export type ActivityQuery = z.infer<ReturnType<typeof ActivityQuerySchema>>;
 
-// AddActivityRequest is the request for the AddActivity operation.
+// AddActivityRequest is the request for the AddActivity method.
 export function AddActivityRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -91,7 +91,7 @@ export function AddActivityResponseSchema() {
 
 export type AddActivityResponse = z.infer<ReturnType<typeof AddActivityResponseSchema>>;
 
-// AddLabelRequest is the request for the AddLabel call.
+// AddLabelRequest is the request for the AddLabel method.
 export function AddLabelRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -101,7 +101,7 @@ export function AddLabelRequestSchema() {
 
 export type AddLabelRequest = z.infer<ReturnType<typeof AddLabelRequestSchema>>;
 
-// AddLabelResponse is the response for the AddLabel call.
+// AddLabelResponse is the response for the AddLabel method.
 export function AddLabelResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -111,6 +111,7 @@ export function AddLabelResponseSchema() {
 
 export type AddLabelResponse = z.infer<ReturnType<typeof AddLabelResponseSchema>>;
 
+// AddTaskRequest is the request for the AddTask method.
 export function AddTaskRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -121,6 +122,7 @@ export function AddTaskRequestSchema() {
 
 export type AddTaskRequest = z.infer<ReturnType<typeof AddTaskRequestSchema>>;
 
+// AddTaskResponse is the response from the AddTask method.
 export function AddTaskResponseSchema() {
   return z.object({
     incidentID: z.string(),
@@ -132,7 +134,7 @@ export function AddTaskResponseSchema() {
 
 export type AddTaskResponse = z.infer<ReturnType<typeof AddTaskResponseSchema>>;
 
-// AssignRoleRequest is the request for the AssignRole call.
+// AssignRoleRequest is the request for the AssignRole method.
 export function AssignRoleRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -143,7 +145,7 @@ export function AssignRoleRequestSchema() {
 
 export type AssignRoleRequest = z.infer<ReturnType<typeof AssignRoleRequestSchema>>;
 
-// AssignRoleResponse is the response for the AssignRole call.
+// AssignRoleResponse is the response for the AssignRole method.
 export function AssignRoleResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -179,7 +181,7 @@ export function AttachmentSchema() {
 
 export type Attachment = z.infer<ReturnType<typeof AttachmentSchema>>;
 
-// CreateIncidentRequest is the request for the CreateIncident call.
+// CreateIncidentRequest is the request for the CreateIncident method.
 export function CreateIncidentRequestSchema() {
   return z.object({
     title: z.string(),
@@ -195,7 +197,7 @@ export function CreateIncidentRequestSchema() {
 
 export type CreateIncidentRequest = z.infer<ReturnType<typeof CreateIncidentRequestSchema>>;
 
-// CreateIncidentResponse is the response for the CreateIncident call.
+// CreateIncidentResponse is the response for the CreateIncident method.
 export function CreateIncidentResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -216,6 +218,7 @@ export function CursorSchema() {
 
 export type Cursor = z.infer<ReturnType<typeof CursorSchema>>;
 
+// DeleteTaskRequest is the request for the DeleteTask method.
 export function DeleteTaskRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -225,6 +228,7 @@ export function DeleteTaskRequestSchema() {
 
 export type DeleteTaskRequest = z.infer<ReturnType<typeof DeleteTaskRequestSchema>>;
 
+// DeleteTaskResponse is the response from the DeleteTask method.
 export function DeleteTaskResponseSchema() {
   return z.object({
     incidentID: z.string(),
@@ -235,14 +239,15 @@ export function DeleteTaskResponseSchema() {
 
 export type DeleteTaskResponse = z.infer<ReturnType<typeof DeleteTaskResponseSchema>>;
 
-// GetHomescreenVersionRequest is the request for the GetHomescreenVersion call.
+// GetHomescreenVersionRequest is the request for the GetHomescreenVersion method.
 export function GetHomescreenVersionRequestSchema() {
   return z.object({});
 }
 
 export type GetHomescreenVersionRequest = z.infer<ReturnType<typeof GetHomescreenVersionRequestSchema>>;
 
-// GetHomescreenVersionResponse is the response for the GetHomescreenVersion call.
+// GetHomescreenVersionResponse is the response for the GetHomescreenVersion
+// method.
 export function GetHomescreenVersionResponseSchema() {
   return z.object({
     version: z.number(),
@@ -251,7 +256,7 @@ export function GetHomescreenVersionResponseSchema() {
 
 export type GetHomescreenVersionResponse = z.infer<ReturnType<typeof GetHomescreenVersionResponseSchema>>;
 
-// GetIncidentRequest is the request for the GetIncident call.
+// GetIncidentRequest is the request for the GetIncident method.
 export function GetIncidentRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -260,7 +265,7 @@ export function GetIncidentRequestSchema() {
 
 export type GetIncidentRequest = z.infer<ReturnType<typeof GetIncidentRequestSchema>>;
 
-// GetIncidentResponse is the response for the GetIncident call.
+// GetIncidentResponse is the response for the GetIncident method.
 export function GetIncidentResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -270,7 +275,7 @@ export function GetIncidentResponseSchema() {
 
 export type GetIncidentResponse = z.infer<ReturnType<typeof GetIncidentResponseSchema>>;
 
-// GetIncidentVersionRequest is the request for the GetIncidentVersion call.
+// GetIncidentVersionRequest is the request for the GetIncidentVersion method.
 export function GetIncidentVersionRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -279,7 +284,7 @@ export function GetIncidentVersionRequestSchema() {
 
 export type GetIncidentVersionRequest = z.infer<ReturnType<typeof GetIncidentVersionRequestSchema>>;
 
-// GetIncidentVersionResponse is the response for the GetIncidentVersion call.
+// GetIncidentVersionResponse is the response for the GetIncidentVersion method.
 export function GetIncidentVersionResponseSchema() {
   return z.object({
     version: z.number(),
@@ -383,7 +388,7 @@ export function OutgoingWebhookPayloadSchema() {
 
 export type OutgoingWebhookPayload = z.infer<ReturnType<typeof OutgoingWebhookPayloadSchema>>;
 
-// QueryActivityRequest is the request for the QueryActivity operation.
+// QueryActivityRequest is the request for the QueryActivity method.
 export function QueryActivityRequestSchema() {
   return z.object({
     query: ActivityQuerySchema(),
@@ -405,7 +410,7 @@ export function QueryActivityResponseSchema() {
 
 export type QueryActivityResponse = z.infer<ReturnType<typeof QueryActivityResponseSchema>>;
 
-// QueryIncidentsRequest is the request for the QueryIncidents call.
+// QueryIncidentsRequest is the request for the QueryIncidents method.
 export function QueryIncidentsRequestSchema() {
   return z.object({
     query: IncidentsQuerySchema(),
@@ -415,7 +420,7 @@ export function QueryIncidentsRequestSchema() {
 
 export type QueryIncidentsRequest = z.infer<ReturnType<typeof QueryIncidentsRequestSchema>>;
 
-// QueryIncidentsResponse is the response for the QueryIncidents call.
+// QueryIncidentsResponse is the response for the QueryIncidents method.
 export function QueryIncidentsResponseSchema() {
   return z.object({
     incidents: IncidentSchema().array(),
@@ -427,7 +432,7 @@ export function QueryIncidentsResponseSchema() {
 
 export type QueryIncidentsResponse = z.infer<ReturnType<typeof QueryIncidentsResponseSchema>>;
 
-// RemoveActivityRequest is the request for the RemoveActivity operation.
+// RemoveActivityRequest is the request for the RemoveActivity method.
 export function RemoveActivityRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -437,7 +442,7 @@ export function RemoveActivityRequestSchema() {
 
 export type RemoveActivityRequest = z.infer<ReturnType<typeof RemoveActivityRequestSchema>>;
 
-// RemoveActivityResponse is the response from the RemoveActivity operation.
+// RemoveActivityResponse is the response from the RemoveActivity method.
 export function RemoveActivityResponseSchema() {
   return z.object({
     activityItem: ActivityItemSchema(),
@@ -447,7 +452,7 @@ export function RemoveActivityResponseSchema() {
 
 export type RemoveActivityResponse = z.infer<ReturnType<typeof RemoveActivityResponseSchema>>;
 
-// RemoveLabelRequest is the request for the RemoveLabel call.
+// RemoveLabelRequest is the request for the RemoveLabel method.
 export function RemoveLabelRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -457,7 +462,7 @@ export function RemoveLabelRequestSchema() {
 
 export type RemoveLabelRequest = z.infer<ReturnType<typeof RemoveLabelRequestSchema>>;
 
-// RemoveLabelResponse is the response for the RemoveLabel call.
+// RemoveLabelResponse is the response for the RemoveLabel method.
 export function RemoveLabelResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -494,7 +499,7 @@ export function TaskListSchema() {
 
 export type TaskList = z.infer<ReturnType<typeof TaskListSchema>>;
 
-// UnassignRoleRequest is the request for the UnassignRole call.
+// UnassignRoleRequest is the request for the UnassignRole method.
 export function UnassignRoleRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -505,7 +510,7 @@ export function UnassignRoleRequestSchema() {
 
 export type UnassignRoleRequest = z.infer<ReturnType<typeof UnassignRoleRequestSchema>>;
 
-// UnassignRoleResponse is the response for the UnassignRole call.
+// UnassignRoleResponse is the response for the UnassignRole method.
 export function UnassignRoleResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -516,7 +521,7 @@ export function UnassignRoleResponseSchema() {
 
 export type UnassignRoleResponse = z.infer<ReturnType<typeof UnassignRoleResponseSchema>>;
 
-// UpdateActivityBodyRequest is the request for the UpdateActivityBody operation.
+// UpdateActivityBodyRequest is the request for the UpdateActivityBody method.
 export function UpdateActivityBodyRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -527,8 +532,7 @@ export function UpdateActivityBodyRequestSchema() {
 
 export type UpdateActivityBodyRequest = z.infer<ReturnType<typeof UpdateActivityBodyRequestSchema>>;
 
-// UpdateActivityBodyResponse is the response from the UpdateActivityBody
-// operation.
+// UpdateActivityBodyResponse is the response from the UpdateActivityBody method.
 export function UpdateActivityBodyResponseSchema() {
   return z.object({
     activityItem: ActivityItemSchema(),
@@ -539,7 +543,7 @@ export function UpdateActivityBodyResponseSchema() {
 export type UpdateActivityBodyResponse = z.infer<ReturnType<typeof UpdateActivityBodyResponseSchema>>;
 
 // UpdateActivityEventTimeRequest is the request for the UpdateActivityEventTime
-// operation.
+// method.
 export function UpdateActivityEventTimeRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -551,7 +555,7 @@ export function UpdateActivityEventTimeRequestSchema() {
 export type UpdateActivityEventTimeRequest = z.infer<ReturnType<typeof UpdateActivityEventTimeRequestSchema>>;
 
 // UpdateActivityEventTimeResponse is the response from the UpdateActivityEventTime
-// operation.
+// method.
 export function UpdateActivityEventTimeResponseSchema() {
   return z.object({
     activityItem: ActivityItemSchema(),
@@ -562,7 +566,7 @@ export function UpdateActivityEventTimeResponseSchema() {
 export type UpdateActivityEventTimeResponse = z.infer<ReturnType<typeof UpdateActivityEventTimeResponseSchema>>;
 
 // UpdateIncidentEventTimeRequest is the request for the UpdateIncidentEventTime
-// call.
+// method.
 export function UpdateIncidentEventTimeRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -573,6 +577,8 @@ export function UpdateIncidentEventTimeRequestSchema() {
 
 export type UpdateIncidentEventTimeRequest = z.infer<ReturnType<typeof UpdateIncidentEventTimeRequestSchema>>;
 
+// UpdateIncidentEventTimeResponse is the response for the UpdateIncidentEventTime
+// method.
 export function UpdateIncidentEventTimeResponseSchema() {
   return z.object({
     error: z.string().nullish(),
@@ -581,6 +587,8 @@ export function UpdateIncidentEventTimeResponseSchema() {
 
 export type UpdateIncidentEventTimeResponse = z.infer<ReturnType<typeof UpdateIncidentEventTimeResponseSchema>>;
 
+// UpdateIncidentIsDrillRequest is the request for the UpdateIncidentIsDrill
+// method.
 export function UpdateIncidentIsDrillRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -590,6 +598,8 @@ export function UpdateIncidentIsDrillRequestSchema() {
 
 export type UpdateIncidentIsDrillRequest = z.infer<ReturnType<typeof UpdateIncidentIsDrillRequestSchema>>;
 
+// UpdateIncidentIsDrillResponse is the response for the UpdateIncidentIsDrill
+// method.
 export function UpdateIncidentIsDrillResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -599,7 +609,7 @@ export function UpdateIncidentIsDrillResponseSchema() {
 
 export type UpdateIncidentIsDrillResponse = z.infer<ReturnType<typeof UpdateIncidentIsDrillResponseSchema>>;
 
-// UpdateSeverityRequest is the request for the UpdateSeverity call.
+// UpdateSeverityRequest is the request for the UpdateSeverity method.
 export function UpdateSeverityRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -609,7 +619,7 @@ export function UpdateSeverityRequestSchema() {
 
 export type UpdateSeverityRequest = z.infer<ReturnType<typeof UpdateSeverityRequestSchema>>;
 
-// UpdateSeverityResponse is the response for the UpdateSeverity call.
+// UpdateSeverityResponse is the response for the UpdateSeverity method.
 export function UpdateSeverityResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -619,7 +629,7 @@ export function UpdateSeverityResponseSchema() {
 
 export type UpdateSeverityResponse = z.infer<ReturnType<typeof UpdateSeverityResponseSchema>>;
 
-// UpdateStatusRequest is the request for the UpdateStatus call.
+// UpdateStatusRequest is the request for the UpdateStatus method.
 export function UpdateStatusRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -629,7 +639,7 @@ export function UpdateStatusRequestSchema() {
 
 export type UpdateStatusRequest = z.infer<ReturnType<typeof UpdateStatusRequestSchema>>;
 
-// UpdateStatusResponse is the response for the UpdateStatus call.
+// UpdateStatusResponse is the response for the UpdateStatus method.
 export function UpdateStatusResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
@@ -639,6 +649,7 @@ export function UpdateStatusResponseSchema() {
 
 export type UpdateStatusResponse = z.infer<ReturnType<typeof UpdateStatusResponseSchema>>;
 
+// UpdateTaskStatusRequest is the request for the UpdateTaskStatus method.
 export function UpdateTaskStatusRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -649,6 +660,7 @@ export function UpdateTaskStatusRequestSchema() {
 
 export type UpdateTaskStatusRequest = z.infer<ReturnType<typeof UpdateTaskStatusRequestSchema>>;
 
+// UpdateTaskStatusResponse is the response from the UpdateTaskStatus method.
 export function UpdateTaskStatusResponseSchema() {
   return z.object({
     incidentID: z.string(),
@@ -660,6 +672,7 @@ export function UpdateTaskStatusResponseSchema() {
 
 export type UpdateTaskStatusResponse = z.infer<ReturnType<typeof UpdateTaskStatusResponseSchema>>;
 
+// UpdateTaskTextRequest is the request for the UpdateTaskText method.
 export function UpdateTaskTextRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -670,6 +683,7 @@ export function UpdateTaskTextRequestSchema() {
 
 export type UpdateTaskTextRequest = z.infer<ReturnType<typeof UpdateTaskTextRequestSchema>>;
 
+// UpdateTaskTextResponse is the response from the UpdateTaskText method.
 export function UpdateTaskTextResponseSchema() {
   return z.object({
     incidentID: z.string(),
@@ -681,6 +695,7 @@ export function UpdateTaskTextResponseSchema() {
 
 export type UpdateTaskTextResponse = z.infer<ReturnType<typeof UpdateTaskTextResponseSchema>>;
 
+// UpdateTaskUserRequest is the request for the UpdateTaskUser method.
 export function UpdateTaskUserRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -691,6 +706,7 @@ export function UpdateTaskUserRequestSchema() {
 
 export type UpdateTaskUserRequest = z.infer<ReturnType<typeof UpdateTaskUserRequestSchema>>;
 
+// UpdateTaskUserResponse is the response from the UpdateTaskUser method.
 export function UpdateTaskUserResponseSchema() {
   return z.object({
     incidentID: z.string(),
@@ -702,7 +718,7 @@ export function UpdateTaskUserResponseSchema() {
 
 export type UpdateTaskUserResponse = z.infer<ReturnType<typeof UpdateTaskUserResponseSchema>>;
 
-// UpdateTitleRequest is the request for the UpdateTitle call.
+// UpdateTitleRequest is the request for the UpdateTitle method.
 export function UpdateTitleRequestSchema() {
   return z.object({
     incidentID: z.string(),
@@ -712,7 +728,7 @@ export function UpdateTitleRequestSchema() {
 
 export type UpdateTitleRequest = z.infer<ReturnType<typeof UpdateTitleRequestSchema>>;
 
-// UpdateTitleResponse is the response for the UpdateTitle call.
+// UpdateTitleResponse is the response for the UpdateTitle method.
 export function UpdateTitleResponseSchema() {
   return z.object({
     incident: IncidentSchema(),
