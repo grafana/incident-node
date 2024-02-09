@@ -134,6 +134,24 @@ export function AddTaskResponseSchema() {
 
 export type AddTaskResponse = z.infer<ReturnType<typeof AddTaskResponseSchema>>;
 
+// ArchiveRoleRequest is the request to archive a role.
+export function ArchiveRoleRequestSchema() {
+  return z.object({
+    roleID: z.number(),
+  });
+}
+
+export type ArchiveRoleRequest = z.infer<ReturnType<typeof ArchiveRoleRequestSchema>>;
+
+// ArchiveRoleResponse is the response to archive a role.
+export function ArchiveRoleResponseSchema() {
+  return z.object({
+    error: z.string().nullish(),
+  });
+}
+
+export type ArchiveRoleResponse = z.infer<ReturnType<typeof ArchiveRoleResponseSchema>>;
+
 // AssignRoleRequest is the request for the AssignRole method.
 export function AssignRoleRequestSchema() {
   return z.object({
@@ -155,6 +173,16 @@ export function AssignRoleResponseSchema() {
 }
 
 export type AssignRoleResponse = z.infer<ReturnType<typeof AssignRoleResponseSchema>>;
+
+// Relation between a User and a Role inside the incident
+export function AssignmentSchema() {
+  return z.object({
+    user: UserPreviewSchema(),
+    role: RoleSchema(),
+  });
+}
+
+export type Assignment = z.infer<ReturnType<typeof AssignmentSchema>>;
 
 // Attachment is a file attached to something.
 export function AttachmentSchema() {
@@ -207,6 +235,25 @@ export function CreateIncidentResponseSchema() {
 
 export type CreateIncidentResponse = z.infer<ReturnType<typeof CreateIncidentResponseSchema>>;
 
+// CreateRoleRequest is the request to create a role.
+export function CreateRoleRequestSchema() {
+  return z.object({
+    role: RoleSchema(),
+  });
+}
+
+export type CreateRoleRequest = z.infer<ReturnType<typeof CreateRoleRequestSchema>>;
+
+// CreateRoleResponse is the response to create a role.
+export function CreateRoleResponseSchema() {
+  return z.object({
+    role: RoleSchema(),
+    error: z.string().nullish(),
+  });
+}
+
+export type CreateRoleResponse = z.infer<ReturnType<typeof CreateRoleResponseSchema>>;
+
 // Cursor describes the position in a result set. It is passed back into the same
 // API to get the next page of results.
 export function CursorSchema() {
@@ -217,6 +264,24 @@ export function CursorSchema() {
 }
 
 export type Cursor = z.infer<ReturnType<typeof CursorSchema>>;
+
+// DeleteRoleRequest is the request to delete a role.
+export function DeleteRoleRequestSchema() {
+  return z.object({
+    roleID: z.number(),
+  });
+}
+
+export type DeleteRoleRequest = z.infer<ReturnType<typeof DeleteRoleRequestSchema>>;
+
+// DeleteRoleResponse is the response to delete a role.
+export function DeleteRoleResponseSchema() {
+  return z.object({
+    error: z.string().nullish(),
+  });
+}
+
+export type DeleteRoleResponse = z.infer<ReturnType<typeof DeleteRoleResponseSchema>>;
 
 // DeleteTaskRequest is the request for the DeleteTask method.
 export function DeleteTaskRequestSchema() {
@@ -256,6 +321,27 @@ export function GetHomescreenVersionResponseSchema() {
 
 export type GetHomescreenVersionResponse = z.infer<ReturnType<typeof GetHomescreenVersionResponseSchema>>;
 
+// GetIncidentMembershipRequest is the request for the GetIncidentMembership
+// method.
+export function GetIncidentMembershipRequestSchema() {
+  return z.object({
+    incidentID: z.string(),
+  });
+}
+
+export type GetIncidentMembershipRequest = z.infer<ReturnType<typeof GetIncidentMembershipRequestSchema>>;
+
+// GetIncidentMembershipResponse is the response for the GetIncidentMembership
+// method.
+export function GetIncidentMembershipResponseSchema() {
+  return z.object({
+    assignments: AssignmentSchema().array(),
+    error: z.string().nullish(),
+  });
+}
+
+export type GetIncidentMembershipResponse = z.infer<ReturnType<typeof GetIncidentMembershipResponseSchema>>;
+
 // GetIncidentRequest is the request for the GetIncident method.
 export function GetIncidentRequestSchema() {
   return z.object({
@@ -293,6 +379,23 @@ export function GetIncidentVersionResponseSchema() {
 
 export type GetIncidentVersionResponse = z.infer<ReturnType<typeof GetIncidentVersionResponseSchema>>;
 
+// GetRolesRequest is the request to get all roles.
+export function GetRolesRequestSchema() {
+  return z.object({});
+}
+
+export type GetRolesRequest = z.infer<ReturnType<typeof GetRolesRequestSchema>>;
+
+// GetRolesResponse is the response to get all roles.
+export function GetRolesResponseSchema() {
+  return z.object({
+    roles: RoleSchema().array(),
+    error: z.string().nullish(),
+  });
+}
+
+export type GetRolesResponse = z.infer<ReturnType<typeof GetRolesResponseSchema>>;
+
 // Incident is a single incident.
 export function IncidentSchema() {
   return z.object({
@@ -309,6 +412,7 @@ export function IncidentSchema() {
     title: z.string(),
     overviewURL: z.string(),
     roles: IncidentRoleSchema().array(),
+    incidentMembership: IncidentMembershipSchema().nullish(),
     taskList: TaskListSchema(),
     summary: z.string(),
     heroImagePath: z.string(),
@@ -329,6 +433,17 @@ export function IncidentLabelSchema() {
 }
 
 export type IncidentLabel = z.infer<ReturnType<typeof IncidentLabelSchema>>;
+
+// IncidentMembership represents a list of people involved in an Incident.
+export function IncidentMembershipSchema() {
+  return z.object({
+    assignments: AssignmentSchema().array(),
+    totalAssignments: z.number(),
+    totalParticipants: z.number(),
+  });
+}
+
+export type IncidentMembership = z.infer<ReturnType<typeof IncidentMembershipSchema>>;
 
 // IncidentRole represents a person involved in an Incident.
 export function IncidentRoleSchema() {
@@ -472,6 +587,23 @@ export function RemoveLabelResponseSchema() {
 
 export type RemoveLabelResponse = z.infer<ReturnType<typeof RemoveLabelResponseSchema>>;
 
+// Role represents a role that will be used to assign people in the incident.
+export function RoleSchema() {
+  return z.object({
+    roleID: z.number().nullish(),
+    orgID: z.string(),
+    name: z.string(),
+    description: z.string().nullish(),
+    important: z.boolean(),
+    mandatory: z.boolean(),
+    archived: z.boolean(),
+    createdAt: z.string(),
+    updatedAt: z.string().nullish(),
+  });
+}
+
+export type Role = z.infer<ReturnType<typeof RoleSchema>>;
+
 // Task is an individual task that somebody will do to resolve an Incident.
 export function TaskSchema() {
   return z.object({
@@ -498,6 +630,24 @@ export function TaskListSchema() {
 }
 
 export type TaskList = z.infer<ReturnType<typeof TaskListSchema>>;
+
+// UnarchiveRoleRequest is the request to unarchive a role.
+export function UnarchiveRoleRequestSchema() {
+  return z.object({
+    roleID: z.number(),
+  });
+}
+
+export type UnarchiveRoleRequest = z.infer<ReturnType<typeof UnarchiveRoleRequestSchema>>;
+
+// UnarchiveRoleResponse is the response to unarchive a role.
+export function UnarchiveRoleResponseSchema() {
+  return z.object({
+    error: z.string().nullish(),
+  });
+}
+
+export type UnarchiveRoleResponse = z.infer<ReturnType<typeof UnarchiveRoleResponseSchema>>;
 
 // UnassignRoleRequest is the request for the UnassignRole method.
 export function UnassignRoleRequestSchema() {
@@ -608,6 +758,25 @@ export function UpdateIncidentIsDrillResponseSchema() {
 }
 
 export type UpdateIncidentIsDrillResponse = z.infer<ReturnType<typeof UpdateIncidentIsDrillResponseSchema>>;
+
+// UpdateRoleRequest is the request to update a role.
+export function UpdateRoleRequestSchema() {
+  return z.object({
+    role: RoleSchema(),
+  });
+}
+
+export type UpdateRoleRequest = z.infer<ReturnType<typeof UpdateRoleRequestSchema>>;
+
+// UpdateRoleResponse is the response to update a role.
+export function UpdateRoleResponseSchema() {
+  return z.object({
+    role: RoleSchema(),
+    error: z.string().nullish(),
+  });
+}
+
+export type UpdateRoleResponse = z.infer<ReturnType<typeof UpdateRoleResponseSchema>>;
 
 // UpdateSeverityRequest is the request for the UpdateSeverity method.
 export function UpdateSeverityRequestSchema() {
@@ -859,6 +1028,18 @@ export class IncidentsService {
     return decodeJson(response.payload, GetIncidentResponseSchema());
   }
 
+  // GetIncidentMembership will return the full list of people involved in an
+  // incident
+  public async getIncidentMembership(
+    getIncidentMembershipRequest: GetIncidentMembershipRequest,
+  ): Promise<APIResponse<GetIncidentMembershipResponse>> {
+    const response = await this._client.fetch('IncidentsService.GetIncidentMembership', getIncidentMembershipRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, GetIncidentMembershipResponseSchema());
+  }
+
   // QueryIncidents gets a list of Incidents.
   public async queryIncidents(
     queryIncidentsRequest: QueryIncidentsRequest,
@@ -940,6 +1121,69 @@ export class IncidentsService {
       return response;
     }
     return decodeJson(response.payload, UpdateTitleResponseSchema());
+  }
+}
+
+// RolesService defines the interface for interacting with roles, providing CRUD
+// operations and more fatures related to roles.
+export class RolesService {
+  private readonly _client: Client;
+  public constructor(client: Client) {
+    this._client = client;
+  }
+
+  // ArchiveRole archives a role.
+  public async archiveRole(archiveRoleRequest: ArchiveRoleRequest): Promise<APIResponse<ArchiveRoleResponse>> {
+    const response = await this._client.fetch('RolesService.ArchiveRole', archiveRoleRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, ArchiveRoleResponseSchema());
+  }
+
+  // CreateRole creates a role.
+  public async createRole(createRoleRequest: CreateRoleRequest): Promise<APIResponse<CreateRoleResponse>> {
+    const response = await this._client.fetch('RolesService.CreateRole', createRoleRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, CreateRoleResponseSchema());
+  }
+
+  // DeleteRole deletes a role.
+  public async deleteRole(deleteRoleRequest: DeleteRoleRequest): Promise<APIResponse<DeleteRoleResponse>> {
+    const response = await this._client.fetch('RolesService.DeleteRole', deleteRoleRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, DeleteRoleResponseSchema());
+  }
+
+  // GetRoles gets all roles.
+  public async getRoles(getRolesRequest: GetRolesRequest): Promise<APIResponse<GetRolesResponse>> {
+    const response = await this._client.fetch('RolesService.GetRoles', getRolesRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, GetRolesResponseSchema());
+  }
+
+  // UnarchiveRole unarchives a role.
+  public async unarchiveRole(unarchiveRoleRequest: UnarchiveRoleRequest): Promise<APIResponse<UnarchiveRoleResponse>> {
+    const response = await this._client.fetch('RolesService.UnarchiveRole', unarchiveRoleRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, UnarchiveRoleResponseSchema());
+  }
+
+  // UpdateRole updates a role.
+  public async updateRole(updateRoleRequest: UpdateRoleRequest): Promise<APIResponse<UpdateRoleResponse>> {
+    const response = await this._client.fetch('RolesService.UpdateRole', updateRoleRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, UpdateRoleResponseSchema());
   }
 }
 
