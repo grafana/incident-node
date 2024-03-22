@@ -411,7 +411,6 @@ export function IncidentSchema() {
     status: z.enum(['active', 'resolved', '']),
     title: z.string(),
     overviewURL: z.string(),
-    roles: IncidentRoleSchema().array(),
     incidentMembership: IncidentMembershipSchema().nullish(),
     taskList: TaskListSchema(),
     summary: z.string(),
@@ -444,20 +443,6 @@ export function IncidentMembershipSchema() {
 }
 
 export type IncidentMembership = z.infer<ReturnType<typeof IncidentMembershipSchema>>;
-
-// IncidentRole represents a person involved in an Incident.
-export function IncidentRoleSchema() {
-  return z.object({
-    role: z.enum(['commander', 'investigator', 'observer', '']),
-    description: z.string(),
-    maxPeople: z.number(),
-    mandatory: z.boolean(),
-    important: z.boolean(),
-    user: UserPreviewSchema(),
-  });
-}
-
-export type IncidentRole = z.infer<ReturnType<typeof IncidentRoleSchema>>;
 
 // IncidentsQuery is the query for the QueryIncidentsRequest.
 export function IncidentsQuerySchema() {
