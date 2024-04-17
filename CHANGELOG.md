@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/grafana/incident/compare/incident-api-node-v1.30.2...incident-api-node-v1.31.0) (2024-04-17)
+
+
+### Features
+
+* Bump minor version ([902d9fb](https://github.com/grafana/incident/commit/902d9fb1baa095fa6ca5df79890147e8c9dcc284))
+
 ## [1.30.2](https://github.com/grafana/incident/compare/incident-api-node-v1.20.0...incident-api-node-v1.30.2) (2023-11-30)
 
 
