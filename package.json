@@ -4,9 +4,22 @@
   "author": "Grafana",
   "version": "1.31.0",
   "license": "MIT",
-  "module": "dist/incident-api-node.esm.js",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "files": [
     "dist",
     "src"
@@ -15,22 +28,15 @@
     "node": ">=14"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "watch": "tsdx watch",
-    "build": "tsdx build",
-    "prepare": "tsdx build",
+    "start": "tsup --config=tsup.config.ts --watch",
+    "watch": "pnpm start",
+    "build": "tsup --config=tsup.config.ts --env.NODE_ENV production",
+    "clean": "rm -rf dist",
     "size": "size-limit",
     "lint": "true",
-    "test": "tsdx test --passWithNoTests",
-    "prettier": "prettier -c ./src",
-    "prettier:fix": "prettier -w ./src",
-    "test:ci": "yarn test",
+    "format": "prettier -c ./src",
+    "format:fix": "prettier -w ./src",
     "typecheck": "tsc --noEmit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "repository": {
     "type": "git",
@@ -55,11 +61,12 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.2.4",
+    "@types/node": "^20.12.7",
     "husky": "^8.0.3",
     "prettier": "^3.0.2",
     "size-limit": "^8.2.4",
-    "tsdx": "^0.14.1",
     "tslib": "^2.5.2",
+    "tsup": "^8.0.0",
     "typescript": "^5.0.4"
   },
   "dependencies": {
