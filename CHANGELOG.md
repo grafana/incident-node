@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.1](https://github.com/grafana/incident/compare/incident-api-node-v1.31.0...incident-api-node-v1.31.1) (2024-04-24)
+
+
+### Bug Fixes
+
+* core-lib should work with eslint consistently; switch to pnpm ([#5259](https://github.com/grafana/incident/issues/5259)) ([ed4f1c3](https://github.com/grafana/incident/commit/ed4f1c3170aed6d4f13ab583822f85c4bb5f032e))
+
 ## [1.31.0](https://github.com/grafana/incident/compare/incident-api-node-v1.30.2...incident-api-node-v1.31.0) (2024-04-17)
 
 
