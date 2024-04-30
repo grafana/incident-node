@@ -213,7 +213,7 @@ export type Attachment = z.infer<ReturnType<typeof AttachmentSchema>>;
 export function CreateIncidentRequestSchema() {
   return z.object({
     title: z.string(),
-    severity: z.enum(['pending', 'minor', 'major', 'critical', '']),
+    severity: z.string(),
     labels: IncidentLabelSchema().array(),
     roomPrefix: z.string(),
     isDrill: z.boolean(),
@@ -400,7 +400,7 @@ export type GetRolesResponse = z.infer<ReturnType<typeof GetRolesResponseSchema>
 export function IncidentSchema() {
   return z.object({
     incidentID: z.string(),
-    severity: z.enum(['pending', 'minor', 'major', 'critical', '']),
+    severityID: z.string(),
     labels: IncidentLabelSchema().array(),
     isDrill: z.boolean(),
     createdTime: z.string(),
@@ -767,7 +767,7 @@ export type UpdateRoleResponse = z.infer<ReturnType<typeof UpdateRoleResponseSch
 export function UpdateSeverityRequestSchema() {
   return z.object({
     incidentID: z.string(),
-    severity: z.enum(['pending', 'minor', 'major', 'critical', '']),
+    severity: z.string(),
   });
 }
 
