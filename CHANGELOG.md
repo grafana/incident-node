@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.0](https://github.com/grafana/incident/compare/incident-api-node-v1.31.1...incident-api-node-v1.32.0) (2024-05-07)
+
+
+### Features
+
+* custom severity-frontend and migration  ([#5190](https://github.com/grafana/incident/issues/5190)) ([d522cdd](https://github.com/grafana/incident/commit/d522cddbdff6c10ab185ac268088678c40d7dbae))
+
 ## [1.31.1](https://github.com/grafana/incident/compare/incident-api-node-v1.31.0...incident-api-node-v1.31.1) (2024-04-24)
 
 
