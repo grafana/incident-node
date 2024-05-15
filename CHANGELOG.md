@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.33.0](https://github.com/grafana/incident/compare/incident-api-node-v1.32.0...incident-api-node-v1.33.0) (2024-05-15)
+
+
+### Features
+
+* add query incident previews ([#5410](https://github.com/grafana/incident/issues/5410)) ([6084757](https://github.com/grafana/incident/commit/6084757573572d3246a4c5ebd96e373e4271abe8))
+
 ## [1.32.0](https://github.com/grafana/incident/compare/incident-api-node-v1.31.1...incident-api-node-v1.32.0) (2024-05-07)
 
 
