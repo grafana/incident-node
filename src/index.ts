@@ -179,10 +179,22 @@ export function AssignmentSchema() {
   return z.object({
     user: UserPreviewSchema(),
     role: RoleSchema(),
+    roleID: z.number(),
   });
 }
 
 export type Assignment = z.infer<ReturnType<typeof AssignmentSchema>>;
+
+// AssignmentPreview describes a person assigned to an incident without the Role
+// object.
+export function AssignmentPreviewSchema() {
+  return z.object({
+    user: UserPreviewSchema(),
+    roleID: z.number(),
+  });
+}
+
+export type AssignmentPreview = z.infer<ReturnType<typeof AssignmentPreviewSchema>>;
 
 // Attachment is a file attached to something.
 export function AttachmentSchema() {
@@ -264,6 +276,16 @@ export function CursorSchema() {
 }
 
 export type Cursor = z.infer<ReturnType<typeof CursorSchema>>;
+
+// CustomMetadataFieldValue is a custom metadata field value.
+export function CustomMetadataFieldValueSchema() {
+  return z.object({
+    fieldID: z.number(),
+    value: z.string(),
+  });
+}
+
+export type CustomMetadataFieldValue = z.infer<ReturnType<typeof CustomMetadataFieldValueSchema>>;
 
 // DeleteRoleRequest is the request to delete a role.
 export function DeleteRoleRequestSchema() {
@@ -444,6 +466,74 @@ export function IncidentMembershipSchema() {
 
 export type IncidentMembership = z.infer<ReturnType<typeof IncidentMembershipSchema>>;
 
+// IncidentMembershipPreview is a summary of the people involved in an Incident.
+export function IncidentMembershipPreviewSchema() {
+  return z.object({
+    importantAssignments: AssignmentPreviewSchema().array(),
+    totalAssignments: z.number(),
+    totalParticipants: z.number(),
+  });
+}
+
+export type IncidentMembershipPreview = z.infer<ReturnType<typeof IncidentMembershipPreviewSchema>>;
+
+// IncidentPreview is a minimal preview of a full Incident (omitting structured
+// children) meant for lightweight listings or getting basic metadata.
+export function IncidentPreviewSchema() {
+  return z.object({
+    incidentID: z.string(),
+    severityID: z.string(),
+    severityLabel: z.string(),
+    incidentType: z.enum(['internal', 'private', '']),
+    labels: IncidentLabelSchema().array(),
+    isDrill: z.boolean(),
+    createdTime: z.string(),
+    modifiedTime: z.string(),
+    closedTime: z.string(),
+    createdByUser: UserPreviewSchema(),
+    title: z.string(),
+    description: z.string(),
+    summary: z.string(),
+    heroImagePath: z.string(),
+    status: z.enum(['active', 'resolved', '']),
+    slug: z.string(),
+    incidentStart: z.string(),
+    incidentEnd: z.string(),
+    fieldValues: CustomMetadataFieldValueSchema().array().nullish(),
+    incidentMembershipPreview: IncidentMembershipPreviewSchema().nullish(),
+    version: z.number(),
+  });
+}
+
+export type IncidentPreview = z.infer<ReturnType<typeof IncidentPreviewSchema>>;
+
+// IncidentPreviewsQuery describes the query to make.
+export function IncidentPreviewsQuerySchema() {
+  return z.object({
+    limit: z.number(),
+    orderDirection: z.enum(['ASC', 'DESC', '']).nullish(),
+    orderField: z
+      .enum([
+        'incidentID',
+        'createdTime',
+        'modifiedTime',
+        'title',
+        'status',
+        'severity',
+        'prefix',
+        'isDrill',
+        'incidentStart',
+        'incidentEnd',
+        'closedTime',
+        '',
+      ])
+      .nullish(),
+    queryString: z.string().nullish(),
+  });
+}
+
+export type IncidentPreviewsQuery = z.infer<ReturnType<typeof IncidentPreviewsQuerySchema>>;
+
 // IncidentsQuery is the query for the QueryIncidentsRequest.
 export function IncidentsQuerySchema() {
   return z.object({
@@ -509,6 +599,31 @@ export function QueryActivityResponseSchema() {
 }
 
 export type QueryActivityResponse = z.infer<ReturnType<typeof QueryActivityResponseSchema>>;
+
+// QueryIncidentPreviews is the request for the QueryIncidentPreviews method.
+export function QueryIncidentPreviewsRequestSchema() {
+  return z.object({
+    query: IncidentPreviewsQuerySchema(),
+    cursor: CursorSchema(),
+    includeCustomFieldValues: z.boolean().nullish(),
+    includeMembershipPreview: z.boolean().nullish(),
+  });
+}
+
+export type QueryIncidentPreviewsRequest = z.infer<ReturnType<typeof QueryIncidentPreviewsRequestSchema>>;
+
+// QueryIncidentPreviewsResponse is the response for the QueryIncidentPreviews
+// method.
+export function QueryIncidentPreviewsResponseSchema() {
+  return z.object({
+    incidentPreviews: IncidentPreviewSchema().array(),
+    query: IncidentPreviewsQuerySchema(),
+    cursor: CursorSchema(),
+    error: z.string().nullish(),
+  });
+}
+
+export type QueryIncidentPreviewsResponse = z.infer<ReturnType<typeof QueryIncidentPreviewsResponseSchema>>;
 
 // QueryIncidentsRequest is the request for the QueryIncidents method.
 export function QueryIncidentsRequestSchema() {
@@ -1025,7 +1140,20 @@ export class IncidentsService {
     return decodeJson(response.payload, GetIncidentMembershipResponseSchema());
   }
 
-  // QueryIncidents gets a list of Incidents.
+  // QueryIncidentPreviews gets a list of Incident Previews.
+  public async queryIncidentPreviews(
+    queryIncidentPreviewsRequest: QueryIncidentPreviewsRequest,
+  ): Promise<APIResponse<QueryIncidentPreviewsResponse>> {
+    const response = await this._client.fetch('IncidentsService.QueryIncidentPreviews', queryIncidentPreviewsRequest);
+    if (!response.success) {
+      return response;
+    }
+    return decodeJson(response.payload, QueryIncidentPreviewsResponseSchema());
+  }
+
+  /**
+   * @deprecated  use QueryIncidentPreviews instead.
+   */
   public async queryIncidents(
     queryIncidentsRequest: QueryIncidentsRequest,
   ): Promise<APIResponse<QueryIncidentsResponse>> {
