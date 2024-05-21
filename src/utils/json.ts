@@ -10,7 +10,7 @@ export interface JsonArray extends ReadonlyArray<Json> {}
  */
 export async function decodeJson<T extends { error?: string | null }>(
   something: Json,
-  schema: Schema<T, ZodTypeDef, Json>,
+  schema: Schema<T, ZodTypeDef, Json>
 ): Promise<APIResponse<T>> {
   const result = await schema.safeParseAsync(something);
   if (result.success) {

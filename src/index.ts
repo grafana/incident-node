@@ -1046,7 +1046,7 @@ export class ActivityService {
 
   // RemoveActivity removes an activity item.
   public async removeActivity(
-    removeActivityRequest: RemoveActivityRequest,
+    removeActivityRequest: RemoveActivityRequest
   ): Promise<APIResponse<RemoveActivityResponse>> {
     const response = await this._client.fetch('ActivityService.RemoveActivity', removeActivityRequest);
     if (!response.success) {
@@ -1057,7 +1057,7 @@ export class ActivityService {
 
   // UpdateActivityBody updates the body of a specific activity item.
   public async updateActivityBody(
-    updateActivityBodyRequest: UpdateActivityBodyRequest,
+    updateActivityBodyRequest: UpdateActivityBodyRequest
   ): Promise<APIResponse<UpdateActivityBodyResponse>> {
     const response = await this._client.fetch('ActivityService.UpdateActivityBody', updateActivityBodyRequest);
     if (!response.success) {
@@ -1068,11 +1068,11 @@ export class ActivityService {
 
   // UpdateActivityEventTime updates the event time of a specific activity item.
   public async updateActivityEventTime(
-    updateActivityEventTimeRequest: UpdateActivityEventTimeRequest,
+    updateActivityEventTimeRequest: UpdateActivityEventTimeRequest
   ): Promise<APIResponse<UpdateActivityEventTimeResponse>> {
     const response = await this._client.fetch(
       'ActivityService.UpdateActivityEventTime',
-      updateActivityEventTimeRequest,
+      updateActivityEventTimeRequest
     );
     if (!response.success) {
       return response;
@@ -1110,7 +1110,7 @@ export class IncidentsService {
 
   // CreateIncident creates a new Incident.
   public async createIncident(
-    createIncidentRequest: CreateIncidentRequest,
+    createIncidentRequest: CreateIncidentRequest
   ): Promise<APIResponse<CreateIncidentResponse>> {
     const response = await this._client.fetch('IncidentsService.CreateIncident', createIncidentRequest);
     if (!response.success) {
@@ -1131,7 +1131,7 @@ export class IncidentsService {
   // GetIncidentMembership will return the full list of people involved in an
   // incident
   public async getIncidentMembership(
-    getIncidentMembershipRequest: GetIncidentMembershipRequest,
+    getIncidentMembershipRequest: GetIncidentMembershipRequest
   ): Promise<APIResponse<GetIncidentMembershipResponse>> {
     const response = await this._client.fetch('IncidentsService.GetIncidentMembership', getIncidentMembershipRequest);
     if (!response.success) {
@@ -1142,7 +1142,7 @@ export class IncidentsService {
 
   // QueryIncidentPreviews gets a list of Incident Previews.
   public async queryIncidentPreviews(
-    queryIncidentPreviewsRequest: QueryIncidentPreviewsRequest,
+    queryIncidentPreviewsRequest: QueryIncidentPreviewsRequest
   ): Promise<APIResponse<QueryIncidentPreviewsResponse>> {
     const response = await this._client.fetch('IncidentsService.QueryIncidentPreviews', queryIncidentPreviewsRequest);
     if (!response.success) {
@@ -1155,7 +1155,7 @@ export class IncidentsService {
    * @deprecated  use QueryIncidentPreviews instead.
    */
   public async queryIncidents(
-    queryIncidentsRequest: QueryIncidentsRequest,
+    queryIncidentsRequest: QueryIncidentsRequest
   ): Promise<APIResponse<QueryIncidentsResponse>> {
     const response = await this._client.fetch('IncidentsService.QueryIncidents', queryIncidentsRequest);
     if (!response.success) {
@@ -1184,11 +1184,11 @@ export class IncidentsService {
 
   // UpdateIncidentEventTime updates the start or end times of an Incident.
   public async updateIncidentEventTime(
-    updateIncidentEventTimeRequest: UpdateIncidentEventTimeRequest,
+    updateIncidentEventTimeRequest: UpdateIncidentEventTimeRequest
   ): Promise<APIResponse<UpdateIncidentEventTimeResponse>> {
     const response = await this._client.fetch(
       'IncidentsService.UpdateIncidentEventTime',
-      updateIncidentEventTimeRequest,
+      updateIncidentEventTimeRequest
     );
     if (!response.success) {
       return response;
@@ -1198,7 +1198,7 @@ export class IncidentsService {
 
   // UpdateIncidentIsDrill changes whether an Incident is a drill or not.
   public async updateIncidentIsDrill(
-    updateIncidentIsDrillRequest: UpdateIncidentIsDrillRequest,
+    updateIncidentIsDrillRequest: UpdateIncidentIsDrillRequest
   ): Promise<APIResponse<UpdateIncidentIsDrillResponse>> {
     const response = await this._client.fetch('IncidentsService.UpdateIncidentIsDrill', updateIncidentIsDrillRequest);
     if (!response.success) {
@@ -1209,7 +1209,7 @@ export class IncidentsService {
 
   // UpdateSeverity updates the severity of an Incident.
   public async updateSeverity(
-    updateSeverityRequest: UpdateSeverityRequest,
+    updateSeverityRequest: UpdateSeverityRequest
   ): Promise<APIResponse<UpdateSeverityResponse>> {
     const response = await this._client.fetch('IncidentsService.UpdateSeverity', updateSeverityRequest);
     if (!response.success) {
@@ -1327,7 +1327,7 @@ export class TasksService {
 
   // UpdateTaskStatus updates the task's Status.
   public async updateTaskStatus(
-    updateTaskStatusRequest: UpdateTaskStatusRequest,
+    updateTaskStatusRequest: UpdateTaskStatusRequest
   ): Promise<APIResponse<UpdateTaskStatusResponse>> {
     const response = await this._client.fetch('TasksService.UpdateTaskStatus', updateTaskStatusRequest);
     if (!response.success) {
@@ -1338,7 +1338,7 @@ export class TasksService {
 
   // UpdateTaskText updates the task's text.
   public async updateTaskText(
-    updateTaskTextRequest: UpdateTaskTextRequest,
+    updateTaskTextRequest: UpdateTaskTextRequest
   ): Promise<APIResponse<UpdateTaskTextResponse>> {
     const response = await this._client.fetch('TasksService.UpdateTaskText', updateTaskTextRequest);
     if (!response.success) {
@@ -1350,7 +1350,7 @@ export class TasksService {
   // UpdateTaskUser updates the task's assigned user. Passing an empty user ID will
   // clear the assigned user.
   public async updateTaskUser(
-    updateTaskUserRequest: UpdateTaskUserRequest,
+    updateTaskUserRequest: UpdateTaskUserRequest
   ): Promise<APIResponse<UpdateTaskUserResponse>> {
     const response = await this._client.fetch('TasksService.UpdateTaskUser', updateTaskUserRequest);
     if (!response.success) {

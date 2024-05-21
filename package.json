@@ -36,7 +36,7 @@
     "lint": "true",
     "format": "prettier -c ./src",
     "format:fix": "prettier -w ./src",
-    "typecheck": "tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -66,10 +66,10 @@
     "prettier": "^3.0.2",
     "size-limit": "^8.2.4",
     "tslib": "^2.5.2",
-    "tsup": "^8.0.0",
+    "tsup": "^8.0.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "zod": "^3.21.4"
+    "zod": "^3.23"
   }
 }
