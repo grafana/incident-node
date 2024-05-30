@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.33.1](https://github.com/grafana/incident/compare/incident-api-node-v1.33.0...incident-api-node-v1.33.1) (2024-05-30)
+
+
+### Bug Fixes
+
+* add back the severity field inside incident struct ([#5510](https://github.com/grafana/incident/issues/5510)) ([17d8290](https://github.com/grafana/incident/commit/17d8290806adfc667a2a87d46a69e342a004126a))
+
 ## [1.33.0](https://github.com/grafana/incident/compare/incident-api-node-v1.32.0...incident-api-node-v1.33.0) (2024-05-15)
 
 
