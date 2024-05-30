@@ -422,7 +422,7 @@ export type GetRolesResponse = z.infer<ReturnType<typeof GetRolesResponseSchema>
 export function IncidentSchema() {
   return z.object({
     incidentID: z.string(),
-    severityID: z.string(),
+    severity: z.string(),
     labels: IncidentLabelSchema().array(),
     isDrill: z.boolean(),
     createdTime: z.string(),
