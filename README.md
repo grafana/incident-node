@@ -8,9 +8,9 @@ The Grafana Incident Node client library allows you to access the Grafana Incide
 ## Installation
 
 ```sh
-npm install @grafana/incident-api
+npm install @grafana/incident-node
 # or
-yarn add @grafana/incident-api
+yarn add @grafana/incident-node
 ```
 
 ## Development
