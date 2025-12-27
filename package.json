@@ -60,14 +60,14 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.2.4",
-    "@types/node": "^20.12.7",
-    "husky": "^8.0.3",
-    "prettier": "^3.0.2",
-    "size-limit": "^8.2.4",
-    "tslib": "^2.5.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.0.4"
+    "@size-limit/preset-small-lib": "8.2.4",
+    "@types/node": "20.14.2",
+    "husky": "8.0.3",
+    "prettier": "3.0.3",
+    "size-limit": "8.2.4",
+    "tslib": "2.5.2",
+    "tsup": "8.1.0",
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "zod": "^3.23"
