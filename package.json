@@ -24,8 +24,9 @@
     "dist",
     "src"
   ],
+  "packageManager": "pnpm@11.3.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "scripts": {
     "start": "tsup --config=tsup.config.ts --watch",
