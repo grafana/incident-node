@@ -71,6 +71,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "zod": "^3.23"
+    "zod": "^4.0.0"
   }
 }
