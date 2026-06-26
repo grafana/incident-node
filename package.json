@@ -24,7 +24,7 @@
     "dist",
     "src"
   ],
-  "packageManager": "pnpm@11.3.0",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": ">=20"
   },
