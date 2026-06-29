@@ -13,28 +13,28 @@ importers:
         version: 3.23.8
     devDependencies:
       '@size-limit/preset-small-lib':
-        specifier: ^8.2.4
+        specifier: 8.2.4
         version: 8.2.4(size-limit@8.2.4)
       '@types/node':
-        specifier: ^20.12.7
+        specifier: 20.14.2
         version: 20.14.2
       husky:
-        specifier: ^8.0.3
+        specifier: 8.0.3
         version: 8.0.3
       prettier:
-        specifier: ^3.0.3
+        specifier: 3.0.3
         version: 3.0.3
       size-limit:
-        specifier: ^8.2.4
+        specifier: 8.2.4
         version: 8.2.4
       tslib:
-        specifier: ^2.5.2
+        specifier: 2.5.2
         version: 2.5.2
       tsup:
         specifier: ^8.0.2
         version: 8.1.0(typescript@5.0.4)
       typescript:
-        specifier: ^5.0.4
+        specifier: 5.0.4
         version: 5.0.4
 
 packages:
