@@ -10,7 +10,7 @@ importers:
     dependencies:
       zod:
         specifier: ^3.23
-        version: 3.23.8
+        version: 3.25.76
     devDependencies:
       '@size-limit/preset-small-lib':
         specifier: 8.2.6
@@ -941,8 +941,8 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
 snapshots:
 
@@ -1673,4 +1673,4 @@ snapshots:
 
   yaml@2.4.5: {}
 
-  zod@3.23.8: {}
+  zod@3.25.76: {}
