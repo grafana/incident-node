@@ -62,7 +62,7 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "8.2.6",
-    "@types/node": "20.14.2",
+    "@types/node": "24.13.3",
     "husky": "8.0.3",
     "prettier": "3.0.3",
     "size-limit": "8.2.4",
