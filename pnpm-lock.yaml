@@ -14,7 +14,7 @@ importers:
     devDependencies:
       '@size-limit/preset-small-lib':
         specifier: 8.2.6
-        version: 8.2.6(size-limit@8.2.4)
+        version: 8.2.6(size-limit@8.2.6)
       '@types/node':
         specifier: 20.14.2
         version: 20.14.2
@@ -25,8 +25,8 @@ importers:
         specifier: 3.0.3
         version: 3.0.3
       size-limit:
-        specifier: 8.2.4
-        version: 8.2.4
+        specifier: 8.2.6
+        version: 8.2.6
       tslib:
         specifier: 2.5.2
         version: 2.5.2
@@ -824,8 +824,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  size-limit@8.2.4:
-    resolution: {integrity: sha512-Un16nSreD1v2CYwSorattiJcHuAWqXvg4TsGgzpjnoByqQwsSfCIEQHuaD14HNStzredR8cdsO9oGH91ibypTA==}
+  size-limit@8.2.6:
+    resolution: {integrity: sha512-zpznim/tX/NegjoQuRKgWTF4XiB0cn2qt90uJzxYNTFAqexk4b94DOAkBD3TwhC6c3kw2r0KcnA5upziVMZqDg==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
 
@@ -1172,22 +1172,22 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@size-limit/esbuild@8.2.6(size-limit@8.2.4)':
+  '@size-limit/esbuild@8.2.6(size-limit@8.2.6)':
     dependencies:
       esbuild: 0.18.20
       nanoid: 3.3.6
-      size-limit: 8.2.4
+      size-limit: 8.2.6
 
-  '@size-limit/file@8.2.6(size-limit@8.2.4)':
+  '@size-limit/file@8.2.6(size-limit@8.2.6)':
     dependencies:
       semver: 7.5.3
-      size-limit: 8.2.4
+      size-limit: 8.2.6
 
-  '@size-limit/preset-small-lib@8.2.6(size-limit@8.2.4)':
+  '@size-limit/preset-small-lib@8.2.6(size-limit@8.2.6)':
     dependencies:
-      '@size-limit/esbuild': 8.2.6(size-limit@8.2.4)
-      '@size-limit/file': 8.2.6(size-limit@8.2.4)
-      size-limit: 8.2.4
+      '@size-limit/esbuild': 8.2.6(size-limit@8.2.6)
+      '@size-limit/file': 8.2.6(size-limit@8.2.6)
+      size-limit: 8.2.6
 
   '@types/estree@1.0.5': {}
 
@@ -1550,7 +1550,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  size-limit@8.2.4:
+  size-limit@8.2.6:
     dependencies:
       bytes-iec: 3.1.1
       chokidar: 3.5.3
