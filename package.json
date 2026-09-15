@@ -61,11 +61,11 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "8.2.6",
+    "@size-limit/preset-small-lib": "13.1.1",
     "@types/node": "20.14.2",
     "husky": "8.0.3",
     "prettier": "3.0.3",
-    "size-limit": "8.2.4",
+    "size-limit": "13.1.1",
     "tslib": "2.5.2",
     "tsup": "^8.0.2",
     "typescript": "5.9.3"
